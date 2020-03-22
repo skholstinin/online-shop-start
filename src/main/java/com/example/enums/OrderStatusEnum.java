@@ -1,6 +1,5 @@
 package com.example.enums;
 
-
 public enum OrderStatusEnum implements CodeEnum {
     NEW(0, "New OrderMain"),
     FINISHED(1, "Finished"),

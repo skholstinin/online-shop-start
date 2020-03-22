@@ -1,5 +1,6 @@
 package com.example.exception;
 
+
 import com.example.enums.ResultEnum;
 
 public class MyException extends RuntimeException {

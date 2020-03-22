@@ -18,43 +18,35 @@ public class ProductInOrder {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
-
     @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.REMOVE)
     @JsonIgnore
     private Cart cart;
-
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "orderId")
+    @JoinColumn(name = "order_id")
     @JsonIgnore
     private OrderMain orderMain;
-
-
     @NotEmpty
     private String productId;
-
     @NotEmpty
     private String productName;
-
     @NotNull
     private String productDescription;
-
     private String productIcon;
-
+    @NotNull
+    private Integer categoryType;
     @NotNull
     private BigDecimal productPrice;
-
     @Min(0)
     private Integer productStock;
-
     @Min(1)
     private Integer count;
-
 
     public ProductInOrder(ProductInfo productInfo, Integer quantity) {
         this.productId = productInfo.getProductId();
         this.productName = productInfo.getProductName();
         this.productDescription = productInfo.getProductDescription();
         this.productIcon = productInfo.getProductIcon();
+        this.categoryType = productInfo.getCategoryType();
         this.productPrice = productInfo.getProductPrice();
         this.productStock = productInfo.getProductStock();
         this.count = quantity;
@@ -68,6 +60,7 @@ public class ProductInOrder {
                 ", productName='" + productName + '\'' +
                 ", productDescription='" + productDescription + '\'' +
                 ", productIcon='" + productIcon + '\'' +
+                ", categoryType=" + categoryType +
                 ", productPrice=" + productPrice +
                 ", productStock=" + productStock +
                 ", count=" + count +
@@ -85,12 +78,13 @@ public class ProductInOrder {
                 Objects.equals(productName, that.productName) &&
                 Objects.equals(productDescription, that.productDescription) &&
                 Objects.equals(productIcon, that.productIcon) &&
+                Objects.equals(categoryType, that.categoryType) &&
                 Objects.equals(productPrice, that.productPrice);
     }
 
     @Override
     public int hashCode() {
 
-        return Objects.hash(super.hashCode(), id, productId, productName, productDescription, productIcon, productPrice);
+        return Objects.hash(super.hashCode(), id, productId, productName, productDescription, productIcon, categoryType, productPrice);
     }
 }

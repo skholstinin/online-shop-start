@@ -22,26 +22,25 @@ public class User implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @NaturalId
     @NotEmpty
-    private String name;
-    @NotEmpty
-    private String surname;
-    @NotEmpty
-    private String login;
+    private String email;
     @NotEmpty
     @Size(min = 3, message = "Length must be more than 3")
     private String password;
+    @NotEmpty
+    private String name;
+    @NotEmpty
+    private String phone;
+    @NotEmpty
+    private String address;
     @NotNull
     private boolean active;
     @NotEmpty
     private String role = "ROLE_CUSTOMER";
 
-    @NaturalId
-    @NotEmpty
-    private String email;
-
     @OneToOne(mappedBy = "user", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    @JsonIgnore
+    @JsonIgnore  // fix bi-direction toString() recursion problem
     private Cart cart;
 
 
@@ -49,8 +48,11 @@ public class User implements Serializable {
     public String toString() {
         return "User{" +
                 "id=" + id +
+                ", email='" + email + '\'' +
                 ", password='" + password + '\'' +
                 ", name='" + name + '\'' +
+                ", phone='" + phone + '\'' +
+                ", address='" + address + '\'' +
                 ", active=" + active +
                 ", role='" + role + '\'' +
                 '}';

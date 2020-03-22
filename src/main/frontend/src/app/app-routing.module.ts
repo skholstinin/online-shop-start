@@ -31,7 +31,7 @@ const routes: Routes = [
     path: 'seller/product',
     component: ProductListComponent,
     canActivate: [AuthGuard],
-    data: {roles: [Role.Manager, Role.Employee]}
+    data: {roles: [Role.Customer, Role.Seller]}
   },
   {
     path: 'profile',
@@ -42,13 +42,13 @@ const routes: Routes = [
     path: 'seller/product/:id/edit',
     component: ProductEditComponent,
     canActivate: [AuthGuard],
-    data: {roles: [Role.Manager, Role.Employee]}
+    data: {roles: [Role.Customer, Role.Seller]}
   },
   {
     path: 'seller/product/:id/new',
     component: ProductEditComponent,
     canActivate: [AuthGuard],
-    data: {roles: [Role.Employee]}
+    data: {roles: [Role.Customer]}
   },
 
 ];

@@ -6,18 +6,23 @@ import com.example.enums.ProductStatusEnum;
 import com.example.enums.ResultEnum;
 import com.example.exception.MyException;
 import com.example.repository.ProductInfoRepository;
+import com.example.service.CategoryService;
 import com.example.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+
+import javax.transaction.Transactional;
 
 @Service
 public class ProductServiceImpl implements ProductService {
 
     @Autowired
     ProductInfoRepository productInfoRepository;
+
+    @Autowired
+    CategoryService categoryService;
 
     @Override
     public ProductInfo findOne(String productId) {
@@ -34,6 +39,11 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public Page<ProductInfo> findAll(Pageable pageable) {
         return productInfoRepository.findAllByOrderByProductId(pageable);
+    }
+
+    @Override
+    public Page<ProductInfo> findAllInCategory(Integer categoryType, Pageable pageable) {
+        return productInfoRepository.findAllByCategoryTypeOrderByProductIdAsc(categoryType, pageable);
     }
 
     @Override
@@ -69,6 +79,8 @@ public class ProductServiceImpl implements ProductService {
         if (productInfo.getProductStatus() == ProductStatusEnum.DOWN.getCode()) {
             throw new MyException(ResultEnum.PRODUCT_STATUS_ERROR);
         }
+
+        //更新
         productInfo.setProductStatus(ProductStatusEnum.DOWN.getCode());
         return productInfoRepository.save(productInfo);
     }
@@ -82,15 +94,22 @@ public class ProductServiceImpl implements ProductService {
         if (productInfo.getProductStatus() == ProductStatusEnum.UP.getCode()) {
             throw new MyException(ResultEnum.PRODUCT_STATUS_ERROR);
         }
+
+        //更新
         productInfo.setProductStatus(ProductStatusEnum.UP.getCode());
         return productInfoRepository.save(productInfo);
     }
 
     @Override
     public ProductInfo update(ProductInfo productInfo) {
+
+        // if null throw exception
+        categoryService.findByCategoryType(productInfo.getCategoryType());
         if (productInfo.getProductStatus() > 1) {
             throw new MyException(ResultEnum.PRODUCT_STATUS_ERROR);
         }
+
+
         return productInfoRepository.save(productInfo);
     }
 

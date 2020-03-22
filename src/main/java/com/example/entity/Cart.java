@@ -1,5 +1,6 @@
 package com.example.entity;
 
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,6 +10,7 @@ import javax.validation.constraints.NotNull;
 import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
+
 
 @Data
 @Entity
@@ -22,6 +24,7 @@ public class Cart implements Serializable {
     @OneToOne(fetch = FetchType.LAZY)
     @MapsId
     @JsonIgnore
+//    @JoinColumn(name = "email", referencedColumnName = "email")
     private User user;
 
     @OneToMany(cascade = CascadeType.ALL,

@@ -1,0 +1,27 @@
+INSERT INTO public.product_category (id, name, category, create_time, update_time) VALUES (2147483645, 'Food', 1, '2018-03-10 00:26:05.000000', '2018-03-10 00:26:05');
+INSERT INTO public.product_category (id, name, category, create_time, update_time) VALUES (2147483641, 'Books', 0, '2018-03-09 23:03:26.000000', '2018-03-10 00:15:27');
+INSERT INTO public.product_category (id, name, category, create_time, update_time) VALUES (2147483642, 'Clothes', 2, '2018-03-10 00:15:02.000000', '2018-03-10 00:15:21');
+INSERT INTO public.product_category (id, name, category, create_time, update_time) VALUES (2147483644, 'Drink', 3, '2018-03-10 01:01:09.000000', '2018-03-10 01:01:09');
+
+
+
+
+INSERT INTO public.product_in_order (id, product_category, product_quantity, product_description, product_icon, product_id, product_name, product_price, prodcut_stock, order_id, customer_id) VALUES (2147483642, 0, 1, 'Books for learning Java', 'https://images-na.ssl-images-amazon.com/images/I/41f6Rd6ZEPL._SX363_BO1, 204, 203, 200_.jpg', 'B0001', 'Core Java', '30.00', 96, null, 2147483641);
+INSERT INTO public.product_in_order (id, product_category, product_quantity, product_description, product_icon, product_id, product_name, product_price, prodcut_stock, order_id, customer_id) VALUES (2147483644, 0, 1, 'Learn Spring', 'https://images-na.ssl-images-amazon.com/images/I/51gHy16h5TL._SX397_BO1, 204, 203, 200_.jpg', 'B0002', 'Spring In Action', '20.00', 195, null, 2147483643);
+INSERT INTO public.product_in_order (id, product_category, product_quantity, product_description, product_icon, product_id, product_name, product_price, prodcut_stock, order_id, customer_id) VALUES (2147483646, 1, 1, 'Kids Party Food', 'http://asset1.marksandspencer.com/is/image/mands/MS_FD_F04C_00398503_NC_X_EC_0?$PDP_MAXI_ZOOM_NEW$', 'F0001', 'Chicken', '4.00', 57, null, 2147483645);
+INSERT INTO public.product_in_order (id, product_category, product_quantity, product_description, product_icon, product_id, product_name, product_price, prodcut_stock, order_id, customer_id) VALUES (2147483636, 0, 1, 'Java SE', 'https://images-na.ssl-images-amazon.com/images/I/51S8VRHA2FL._SX357_BO1, 204, 203, 200_.jpg', 'B0005', 'Thinking in Java', '30.00', 199, null, 2147483645);
+INSERT INTO public.product_in_order (id, product_category, product_quantity, product_description, product_icon, product_id, product_name, product_price, prodcut_stock, order_id, customer_id) VALUES (2147483647, 3, 1, 'Awesome', 'https://starbuckssecretmenu.net/wp-content/uploads/2017/06/Starbucks-Violet-Drink.jpg', 'D0002', 'Starbucks Violet Drink', '2.00', 200, null, 2147483645);
+INSERT INTO public.product_in_order (id, product_category, product_quantity, product_description, product_icon, product_id, product_name, product_price, prodcut_stock, order_id, customer_id) VALUES (2147483638, 0, 1, 'Java SE', 'https://www.pearsonhighered.com/assets/bigcovers/0/1/3/2/0132778041.jpg', 'B0004', 'Effective Java', '30.00', 199, null, 2147483645);
+INSERT INTO public.product_in_order (id, product_category, product_quantity, product_description, product_icon, product_id, product_name, product_price, prodcut_stock, order_id, customer_id) VALUES (2147483631, 1, 1, 'Family s', 'http://cdn1.thecomeback.com/wp-content/uploads/2017/05/mcdonalds_food-832x447.png', 'F0002', 'McDonald‘s Food', '20.00', 22, null, 2147483640);
+INSERT INTO public.product_in_order (id, product_category, product_quantity, product_description, product_icon, product_id, product_name, product_price, prodcut_stock, order_id, customer_id) VALUES (2147483633, 1, 1, 'Kids Party Food', 'http://asset1.marksandspencer.com/is/image/mands/MS_FD_F04C_00398503_NC_X_EC_0?$PDP_MAXI_ZOOM_NEW$', 'F0001', 'Chicken', '4.00', 57, null, 2147483642);
+
+
+
+INSERT INTO public.product_info (product_id, product_name, product_price, product_stock, product_description, product_icon, product_status, category_type, create_time, update_time) VALUES ('book247', 'book', 456, 67, 'best book', 'somewhere', 1, 0, '2020-03-23 01:12:39.000000', '2020-03-23 01:12:40.000000');
+INSERT INTO public.product_info (product_id, product_name, product_price, product_stock, product_description, product_icon, product_status, category_type, create_time, update_time) VALUES ('book007', 'book math', 7634, 90, 'best math book', 'anywhere', 1, 0, '2020-03-23 01:12:39.000000', '2020-03-23 01:12:40.000000');
+INSERT INTO public.product_info (product_id, product_name, product_price, product_stock, product_description, product_icon, product_status, category_type, create_time, update_time) VALUES ('bookfrgh', 'book eng', 368, 5843, 'best book', 'somewhere', 1, 0, '2020-03-23 01:12:39.000000', '2020-03-23 01:12:40.000000');
+INSERT INTO public.product_info (product_id, product_name, product_price, product_stock, product_description, product_icon, product_status, category_type, create_time, update_time) VALUES ('book009', 'book rus', 589, 154, 'best math book', 'anywhere', 1, 0, '2020-03-23 01:12:39.000000', '2020-03-23 01:12:40.000000');
+
+
+
+INSERT INTO public.users (id, email, password, name, phone, address, active, role) VALUES (1, 'customer1@mail.com', '$2b$10$l26rxxjrJWF6xngryGOwL..mWyAg0Nuvd20sbMcC5g7BBMTXwlkMi', 'alex', '4566', 'kazan', 'true', 'ROLE_CUSTOMER');

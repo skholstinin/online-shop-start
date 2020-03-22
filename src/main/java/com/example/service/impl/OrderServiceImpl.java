@@ -17,7 +17,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
+
+import javax.transaction.Transactional;
 
 @Service
 public class OrderServiceImpl implements OrderService {
@@ -45,6 +46,11 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public Page<OrderMain> findByBuyerEmail(String email, Pageable pageable) {
         return orderRepository.findAllByBuyerEmailOrderByOrderStatusAscCreateTimeDesc(email, pageable);
+    }
+
+    @Override
+    public Page<OrderMain> findByBuyerPhone(String phone, Pageable pageable) {
+        return orderRepository.findAllByBuyerPhoneOrderByOrderStatusAscCreateTimeDesc(phone, pageable);
     }
 
     @Override
@@ -80,6 +86,7 @@ public class OrderServiceImpl implements OrderService {
         orderMain.setOrderStatus(OrderStatusEnum.CANCELED.getCode());
         orderRepository.save(orderMain);
 
+        // Restore Stock
         Iterable<ProductInOrder> products = orderMain.getProducts();
         for (ProductInOrder productInOrder : products) {
             ProductInfo productInfo = productInfoRepository.findByProductId(productInOrder.getProductId());

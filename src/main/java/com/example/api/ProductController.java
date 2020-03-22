@@ -1,6 +1,8 @@
 package com.example.api;
 
+
 import com.example.entity.ProductInfo;
+import com.example.service.CategoryService;
 import com.example.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -15,7 +17,13 @@ import javax.validation.Valid;
 @RestController
 public class ProductController {
     @Autowired
+    CategoryService categoryService;
+    @Autowired
     ProductService productService;
+
+    /**
+     * Show All Categories
+     */
 
     @GetMapping("/product")
     public Page<ProductInfo> findAll(@RequestParam(value = "page", defaultValue = "1") Integer page,
@@ -26,7 +34,14 @@ public class ProductController {
 
     @GetMapping("/product/{productId}")
     public ProductInfo showOne(@PathVariable("productId") String productId) {
+
         ProductInfo productInfo = productService.findOne(productId);
+
+//        // Product is not available
+//        if (productInfo.getProductStatus().equals(ProductStatusEnum.DOWN.getCode())) {
+//            productInfo = null;
+//        }
+
         return productInfo;
     }
 

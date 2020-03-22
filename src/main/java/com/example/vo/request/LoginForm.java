@@ -1,4 +1,5 @@
-package com.example.request;
+package com.example.vo.request;
+
 
 import lombok.Data;
 

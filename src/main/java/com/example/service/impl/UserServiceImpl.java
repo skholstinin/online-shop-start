@@ -12,8 +12,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.DependsOn;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
+import javax.transaction.Transactional;
 import java.util.Collection;
 
 @Service
@@ -39,9 +39,12 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public User save(User user) {
+        //register
         user.setPassword(passwordEncoder.encode(user.getPassword()));
         try {
             User savedUser = userRepository.save(user);
+
+            // initial Cart
             Cart savedCart = cartRepository.save(new Cart(savedUser));
             savedUser.setCart(savedCart);
             return userRepository.save(savedUser);
@@ -55,10 +58,11 @@ public class UserServiceImpl implements UserService {
     @Override
     @Transactional
     public User update(User user) {
-        User oldUser = userRepository.findByEmail(user.getLogin());
-        oldUser.setEmail(user.getEmail());
+        User oldUser = userRepository.findByEmail(user.getEmail());
         oldUser.setPassword(passwordEncoder.encode(user.getPassword()));
         oldUser.setName(user.getName());
+        oldUser.setPhone(user.getPhone());
+        oldUser.setAddress(user.getAddress());
         return userRepository.save(oldUser);
     }
 

@@ -513,7 +513,7 @@ function _createClass(Constructor, protoProps, staticProps) {
                 component: _pages_product_list_product_list_component__WEBPACK_IMPORTED_MODULE_10__["ProductListComponent"],
                 canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_7__["AuthGuard"]],
                 data: {
-                    roles: [_enum_Role__WEBPACK_IMPORTED_MODULE_13__["Role"].Manager, _enum_Role__WEBPACK_IMPORTED_MODULE_13__["Role"].Employee]
+                    roles: [_enum_Role__WEBPACK_IMPORTED_MODULE_13__["Role"].Customer, _enum_Role__WEBPACK_IMPORTED_MODULE_13__["Role"].Seller]
                 }
             }, {
                 path: 'profile',
@@ -524,14 +524,14 @@ function _createClass(Constructor, protoProps, staticProps) {
                 component: _pages_product_edit_product_edit_component__WEBPACK_IMPORTED_MODULE_12__["ProductEditComponent"],
                 canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_7__["AuthGuard"]],
                 data: {
-                    roles: [_enum_Role__WEBPACK_IMPORTED_MODULE_13__["Role"].Manager, _enum_Role__WEBPACK_IMPORTED_MODULE_13__["Role"].Employee]
+                    roles: [_enum_Role__WEBPACK_IMPORTED_MODULE_13__["Role"].Customer, _enum_Role__WEBPACK_IMPORTED_MODULE_13__["Role"].Seller]
                 }
             }, {
                 path: 'seller/product/:id/new',
                 component: _pages_product_edit_product_edit_component__WEBPACK_IMPORTED_MODULE_12__["ProductEditComponent"],
                 canActivate: [_guards_auth_guard__WEBPACK_IMPORTED_MODULE_7__["AuthGuard"]],
                 data: {
-                    roles: [_enum_Role__WEBPACK_IMPORTED_MODULE_13__["Role"].Employee]
+                    roles: [_enum_Role__WEBPACK_IMPORTED_MODULE_13__["Role"].Customer]
                 }
             }];
 
@@ -615,7 +615,7 @@ function _createClass(Constructor, protoProps, staticProps) {
             var AppComponent = function AppComponent() {
                 _classCallCheck(this, AppComponent);
 
-                this.title = 'frontend';
+                this.title = 'Simple shop';
             };
 
             AppComponent.ɵfac = function AppComponent_Factory(t) {
@@ -625,9 +625,9 @@ function _createClass(Constructor, protoProps, staticProps) {
             AppComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
                 type: AppComponent,
                 selectors: [["app-root"]],
-                decls: 14,
+                decls: 3,
                 vars: 0,
-                consts: [[1, "container"], [1, "text-center"], ["href", "https://github.com/zhulinn", 2, "color", "inherit"], [1, "fab", "fa-github", "fa-3x"], [1, "footer-copyright", "py-3", "text-center"], ["href", "https://zlin.me"]],
+                consts: [[1, "container"]],
                 template: function AppComponent_Template(rf, ctx) {
                     if (rf & 1) {
                         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "div", 0);
@@ -635,38 +635,6 @@ function _createClass(Constructor, protoProps, staticProps) {
                         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](1, "app-navigation");
 
                         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "router-outlet");
-
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "div", 0);
-
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](4, "br");
-
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](5, "br");
-
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](6, "hr");
-
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "div", 1);
-
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](8, "a", 2);
-
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](9, "i", 3);
-
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](10, "div", 4);
-
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](11, " \xA9 2019 Copyright: ");
-
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](12, "a", 5);
-
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](13, " zlin.me ");
-
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
                         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
                     }
@@ -832,8 +800,8 @@ function _createClass(Constructor, protoProps, staticProps) {
             /* harmony import */
 
 
-            var _frontend_src_app_parts_navigation_navigation_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
-                /*! ../../../frontend/src/app/parts/navigation/navigation.component */
+            var _parts_navigation_navigation_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(
+                /*! ./parts/navigation/navigation.component */
                 "./src/app/parts/navigation/navigation.component.ts");
 
             var AppModule = function AppModule() {
@@ -862,7 +830,7 @@ function _createClass(Constructor, protoProps, staticProps) {
 
             (function () {
                 (typeof ngJitMode === "undefined" || ngJitMode) && _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵɵsetNgModuleScope"](AppModule, {
-                    declarations: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"], _frontend_src_app_parts_navigation_navigation_component__WEBPACK_IMPORTED_MODULE_20__["NavigationComponent"], _pages_card_card_component__WEBPACK_IMPORTED_MODULE_3__["CardComponent"], _parts_pagination_pagination_component__WEBPACK_IMPORTED_MODULE_4__["PaginationComponent"], _pages_login_login_component__WEBPACK_IMPORTED_MODULE_6__["LoginComponent"], _pages_signup_signup_component__WEBPACK_IMPORTED_MODULE_7__["SignupComponent"], _pages_product_detail_detail_component__WEBPACK_IMPORTED_MODULE_8__["DetailComponent"], _pages_cart_cart_component__WEBPACK_IMPORTED_MODULE_11__["CartComponent"], _pages_order_order_component__WEBPACK_IMPORTED_MODULE_15__["OrderComponent"], _pages_order_detail_order_detail_component__WEBPACK_IMPORTED_MODULE_16__["OrderDetailComponent"], _pages_product_list_product_list_component__WEBPACK_IMPORTED_MODULE_17__["ProductListComponent"], _pages_user_edit_user_detail_component__WEBPACK_IMPORTED_MODULE_18__["UserDetailComponent"], _pages_product_edit_product_edit_component__WEBPACK_IMPORTED_MODULE_19__["ProductEditComponent"]],
+                    declarations: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"], _parts_navigation_navigation_component__WEBPACK_IMPORTED_MODULE_20__["NavigationComponent"], _pages_card_card_component__WEBPACK_IMPORTED_MODULE_3__["CardComponent"], _parts_pagination_pagination_component__WEBPACK_IMPORTED_MODULE_4__["PaginationComponent"], _pages_login_login_component__WEBPACK_IMPORTED_MODULE_6__["LoginComponent"], _pages_signup_signup_component__WEBPACK_IMPORTED_MODULE_7__["SignupComponent"], _pages_product_detail_detail_component__WEBPACK_IMPORTED_MODULE_8__["DetailComponent"], _pages_cart_cart_component__WEBPACK_IMPORTED_MODULE_11__["CartComponent"], _pages_order_order_component__WEBPACK_IMPORTED_MODULE_15__["OrderComponent"], _pages_order_detail_order_detail_component__WEBPACK_IMPORTED_MODULE_16__["OrderDetailComponent"], _pages_product_list_product_list_component__WEBPACK_IMPORTED_MODULE_17__["ProductListComponent"], _pages_user_edit_user_detail_component__WEBPACK_IMPORTED_MODULE_18__["UserDetailComponent"], _pages_product_edit_product_edit_component__WEBPACK_IMPORTED_MODULE_19__["ProductEditComponent"]],
                     imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClientModule"]]
                 });
             })();
@@ -873,7 +841,7 @@ function _createClass(Constructor, protoProps, staticProps) {
                 _angular_core__WEBPACK_IMPORTED_MODULE_1__["ɵsetClassMetadata"](AppModule, [{
                     type: _angular_core__WEBPACK_IMPORTED_MODULE_1__["NgModule"],
                     args: [{
-                        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"], _frontend_src_app_parts_navigation_navigation_component__WEBPACK_IMPORTED_MODULE_20__["NavigationComponent"], _pages_card_card_component__WEBPACK_IMPORTED_MODULE_3__["CardComponent"], _parts_pagination_pagination_component__WEBPACK_IMPORTED_MODULE_4__["PaginationComponent"], _pages_login_login_component__WEBPACK_IMPORTED_MODULE_6__["LoginComponent"], _pages_signup_signup_component__WEBPACK_IMPORTED_MODULE_7__["SignupComponent"], _pages_product_detail_detail_component__WEBPACK_IMPORTED_MODULE_8__["DetailComponent"], _pages_cart_cart_component__WEBPACK_IMPORTED_MODULE_11__["CartComponent"], _pages_order_order_component__WEBPACK_IMPORTED_MODULE_15__["OrderComponent"], _pages_order_detail_order_detail_component__WEBPACK_IMPORTED_MODULE_16__["OrderDetailComponent"], _pages_product_list_product_list_component__WEBPACK_IMPORTED_MODULE_17__["ProductListComponent"], _pages_user_edit_user_detail_component__WEBPACK_IMPORTED_MODULE_18__["UserDetailComponent"], _pages_product_edit_product_edit_component__WEBPACK_IMPORTED_MODULE_19__["ProductEditComponent"]],
+                        declarations: [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"], _parts_navigation_navigation_component__WEBPACK_IMPORTED_MODULE_20__["NavigationComponent"], _pages_card_card_component__WEBPACK_IMPORTED_MODULE_3__["CardComponent"], _parts_pagination_pagination_component__WEBPACK_IMPORTED_MODULE_4__["PaginationComponent"], _pages_login_login_component__WEBPACK_IMPORTED_MODULE_6__["LoginComponent"], _pages_signup_signup_component__WEBPACK_IMPORTED_MODULE_7__["SignupComponent"], _pages_product_detail_detail_component__WEBPACK_IMPORTED_MODULE_8__["DetailComponent"], _pages_cart_cart_component__WEBPACK_IMPORTED_MODULE_11__["CartComponent"], _pages_order_order_component__WEBPACK_IMPORTED_MODULE_15__["OrderComponent"], _pages_order_detail_order_detail_component__WEBPACK_IMPORTED_MODULE_16__["OrderDetailComponent"], _pages_product_list_product_list_component__WEBPACK_IMPORTED_MODULE_17__["ProductListComponent"], _pages_user_edit_user_detail_component__WEBPACK_IMPORTED_MODULE_18__["UserDetailComponent"], _pages_product_edit_product_edit_component__WEBPACK_IMPORTED_MODULE_19__["ProductEditComponent"]],
                         imports: [_angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"], _app_routing_module__WEBPACK_IMPORTED_MODULE_5__["AppRoutingModule"], _angular_forms__WEBPACK_IMPORTED_MODULE_9__["FormsModule"], _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HttpClientModule"]],
                         providers: [ngx_cookie_service__WEBPACK_IMPORTED_MODULE_12__["CookieService"], {
                             provide: _angular_common_http__WEBPACK_IMPORTED_MODULE_10__["HTTP_INTERCEPTORS"],
@@ -947,8 +915,7 @@ function _createClass(Constructor, protoProps, staticProps) {
 
             (function (Role) {
                 Role["Customer"] = "ROLE_CUSTOMER";
-                Role["Employee"] = "ROLE_EMPLOYEE";
-                Role["Manager"] = "ROLE_MANAGER";
+                Role["Seller"] = "ROLE_SELLER";
             })(Role || (Role = {}));
             /***/
 
@@ -1824,7 +1791,7 @@ function _createClass(Constructor, protoProps, staticProps) {
                     if (rf & 1) {
                         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "h1", 0);
 
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "My Cart");
+                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, "Your cart");
 
                         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -1860,7 +1827,7 @@ function _createClass(Constructor, protoProps, staticProps) {
 
                         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](13, "th", 2);
 
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "Subtotal");
+                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](14, "Total");
 
                         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -2066,7 +2033,7 @@ function _createClass(Constructor, protoProps, staticProps) {
             LoginComponent.ɵcmp = _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵdefineComponent"]({
                 type: LoginComponent,
                 selectors: [["app-login"]],
-                decls: 44,
+                decls: 38,
                 vars: 8,
                 consts: [["align", "center", 1, "display-4", "mb-5"], [2, "width", "40%", "margin", "25px auto"], ["class", "alert alert-danger", 4, "ngIf"], ["class", "alert alert-info", 4, "ngIf"], [3, "ngSubmit"], ["form", "ngForm"], [1, "form-group"], ["type", "text", "id", "email", "name", "email", "placeholder", "Enter email", "required", "", "autofocus", "", "autocomplete", "email", 1, "form-control", "form-control-lg", 3, "ngModel", "ngModelChange"], ["email", "ngModel"], [1, "alert", "alert-danger", 3, "hidden"], ["type", "password", "id", "password", "name", "password", "autocomplete", "password", "placeholder", "Password", "required", "", 1, "form-control", "form-control-lg", 3, "ngModel", "ngModelChange"], ["password", "ngModel"], ["type", "checkbox", "id", "remember_me", "name", "remember-me", 3, "ngModel", "ngModelChange"], ["for", "remember_me", 1, "inline"], ["routerLink", "/register", 1, "float-right"], ["type", "submit", 1, "btn", "btn-lg", "btn-primary", "btn-block", 3, "disabled"], ["id", "sampleLoginTable", 2, "width", "100%"], ["href", "javascript:void(0)", 3, "click"], [1, "alert", "alert-danger"], [1, "alert", "alert-info"]],
                 template: function LoginComponent_Template(rf, ctx) {
@@ -2192,38 +2159,10 @@ function _createClass(Constructor, protoProps, staticProps) {
                         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](36, "a", 17);
 
                         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoginComponent_Template_a_click_36_listener() {
-                            return ctx.fillLoginFields("customer1@email.com", "123");
+                            return ctx.fillLoginFields("customer1@mail.com", "123");
                         });
 
                         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](37, "customer1");
-
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](38, "td");
-
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](39, "a", 17);
-
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoginComponent_Template_a_click_39_listener() {
-                            return ctx.fillLoginFields("employee1@email.com", "123");
-                        });
-
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](40, "employee1");
-
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
-
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](41, "td");
-
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](42, "a", 17);
-
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵlistener"]("click", function LoginComponent_Template_a_click_42_listener() {
-                            return ctx.fillLoginFields("manager1@email.com", "123");
-                        });
-
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](43, "manager1");
 
                         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -5437,25 +5376,25 @@ function _createClass(Constructor, protoProps, staticProps) {
 
                     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](1, "a", 12);
 
-                    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " Books ");
+                    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](2, " Category1 ");
 
                     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
                     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](3, "a", 13);
 
-                    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, " Food ");
+                    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](4, " Category2 ");
 
                     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
                     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](5, "a", 14);
 
-                    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, " Clothes ");
+                    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](6, " Category3 ");
 
                     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
                     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](7, "a", 15);
 
-                    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, " Drink ");
+                    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](8, " Category4 ");
 
                     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
@@ -5535,13 +5474,13 @@ function _createClass(Constructor, protoProps, staticProps) {
                 if (rf & 1) {
                     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](0, "a", 22);
 
-                    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Sign In ");
+                    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](1, " Login ");
 
                     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
                     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementStart"](2, "a", 23);
 
-                    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, " Sign Up ");
+                    _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, " Register ");
 
                     _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
                 }
@@ -5610,7 +5549,7 @@ function _createClass(Constructor, protoProps, staticProps) {
 
                         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelement"](2, "img", 2);
 
-                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, " E-Shop ");
+                        _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵtext"](3, " Simple online shop ");
 
                         _angular_core__WEBPACK_IMPORTED_MODULE_0__["ɵɵelementEnd"]();
 
