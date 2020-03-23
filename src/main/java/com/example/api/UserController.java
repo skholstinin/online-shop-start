@@ -1,11 +1,10 @@
 package com.example.api;
 
 import com.example.entity.User;
-import com.example.security.JWT.JwtEntryPoint;
 import com.example.security.JWT.JwtProvider;
 import com.example.service.UserService;
-import com.example.vo.request.LoginForm;
-import com.example.vo.response.JwtResponse;
+import com.example.napages.request.LoginForm;
+import com.example.napages.response.JwtResponse;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;

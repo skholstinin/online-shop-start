@@ -1,4 +1,5 @@
 import {Component, Input, OnInit} from '@angular/core';
+import {JwtResponse} from "../../response/JwtResponse";
 
 @Component({
   selector: 'app-pagination',
@@ -8,6 +9,7 @@ import {Component, Input, OnInit} from '@angular/core';
 export class PaginationComponent implements OnInit {
 
   @Input() currentPage: any;
+  currentUser: JwtResponse;
 
   constructor() {
   }

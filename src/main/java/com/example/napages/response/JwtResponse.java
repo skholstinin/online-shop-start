@@ -1,4 +1,4 @@
-package com.example.vo.response;
+package com.example.napages.response;
 
 import lombok.Data;
 

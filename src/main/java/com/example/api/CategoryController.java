@@ -5,7 +5,7 @@ import com.example.entity.ProductCategory;
 import com.example.entity.ProductInfo;
 import com.example.service.CategoryService;
 import com.example.service.ProductService;
-import com.example.vo.response.CategoryPage;
+import com.example.napages.response.CategoryPage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
