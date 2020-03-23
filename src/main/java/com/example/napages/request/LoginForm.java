@@ -1,4 +1,5 @@
-package com.example.request;
+package com.example.napages.request;
+
 
 import lombok.Data;
 

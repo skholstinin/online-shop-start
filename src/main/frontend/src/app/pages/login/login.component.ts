@@ -38,7 +38,6 @@ export class LoginComponent implements OnInit {
       user => {
         if (user) {
           if (user.role != Role.Customer) {
-
             this.returnUrl = '/seller';
           }
 

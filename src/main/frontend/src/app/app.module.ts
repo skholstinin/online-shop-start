@@ -20,7 +20,7 @@ import {OrderDetailComponent} from './pages/order-detail/order-detail.component'
 import {ProductListComponent} from './pages/product-list/product.list.component';
 import {UserDetailComponent} from './pages/user-edit/user-detail.component';
 import {ProductEditComponent} from './pages/product-edit/product-edit.component';
-import {NavigationComponent} from "../../../frontend/src/app/parts/navigation/navigation.component";
+import {NavigationComponent} from "./parts/navigation/navigation.component";
 
 @NgModule({
   declarations: [

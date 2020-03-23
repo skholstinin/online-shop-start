@@ -1,5 +1,6 @@
 package com.example.entity;
 
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.ColumnDefault;
@@ -34,14 +35,24 @@ public class OrderMain implements Serializable {
     private Set<ProductInOrder> products = new HashSet<>();
 
     @NotEmpty
+    private String buyerEmail;
+
+    @NotEmpty
     private String buyerName;
 
     @NotEmpty
-    private String buyerEmail;
+    private String buyerPhone;
 
+    @NotEmpty
+    private String buyerAddress;
+
+    // Total Amount
     @NotNull
     private BigDecimal orderAmount;
 
+    /**
+     * default 0: new order.
+     */
     @NotNull
     @ColumnDefault("0")
     private Integer orderStatus;
@@ -53,7 +64,10 @@ public class OrderMain implements Serializable {
     private LocalDateTime updateTime;
 
     public OrderMain(User buyer) {
+        this.buyerEmail = buyer.getEmail();
         this.buyerName = buyer.getName();
+        this.buyerPhone = buyer.getPhone();
+        this.buyerAddress = buyer.getAddress();
         this.orderAmount = buyer.getCart().getProducts().stream().map(item -> item.getProductPrice().multiply(new BigDecimal(item.getCount())))
                 .reduce(BigDecimal::add)
                 .orElse(new BigDecimal(0));

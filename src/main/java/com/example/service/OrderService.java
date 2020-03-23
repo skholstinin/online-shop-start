@@ -12,6 +12,8 @@ public interface OrderService {
 
     Page<OrderMain> findByBuyerEmail(String email, Pageable pageable);
 
+    Page<OrderMain> findByBuyerPhone(String phone, Pageable pageable);
+
     OrderMain findOne(Long orderId);
 
 

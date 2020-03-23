@@ -14,8 +14,8 @@ import com.example.service.ProductService;
 import com.example.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
+import javax.transaction.Transactional;
 import java.util.Collection;
 import java.util.Optional;
 import java.util.Set;
@@ -74,12 +74,15 @@ public class CartServiceImpl implements CartService {
     }
 
 
+
     @Override
     @Transactional
     public void checkout(User user) {
+        // Creat an order
         OrderMain order = new OrderMain(user);
         orderRepository.save(order);
 
+        // clear cart's foreign key & set order's foreign key& decrease stock
         user.getCart().getProducts().forEach(productInOrder -> {
             productInOrder.setCart(null);
             productInOrder.setOrderMain(order);
