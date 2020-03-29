@@ -1,0 +1,56 @@
+package com.example;
+
+
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.web.servlet.ViewResolver;
+import org.springframework.web.servlet.config.annotation.*;
+import org.springframework.web.servlet.view.InternalResourceView;
+import org.springframework.web.servlet.view.InternalResourceViewResolver;
+
+@Configuration
+@EnableWebMvc
+@ComponentScan(basePackages = {"com.example.api"})
+public class WebMvcConfig implements WebMvcConfigurer {
+//    @Value("#{'${web.mvc.crossOrigins}'.split(',')}")
+//    private String[] crossOrigins;
+
+    private static final String[] CLASSPATH_RESOURCE_LOCATIONS = {
+            "classpath:/META-INF/resources/",
+            "classpath:/resources/",
+            "classpath:/static/",
+            "classpath:/public/",
+            "classpath:/static/asterisk-prime-ui/"
+    };
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        if (!registry.hasMappingForPattern("/**")) {
+            registry.addResourceHandler("/**")
+                    .addResourceLocations(CLASSPATH_RESOURCE_LOCATIONS);
+        }
+    }
+
+//    @Override
+//    public void addCorsMappings(CorsRegistry registry)
+//    {
+//        registry.addMapping("/api/**")
+//                .allowedOrigins(crossOrigins)
+//                .allowCredentials(true)
+//                .maxAge(3600);
+//    }
+
+    @Override
+    public void addViewControllers(ViewControllerRegistry registry) {
+        registry.addViewController("/").setViewName("index.html");
+    }
+
+    @Bean
+    public ViewResolver internalResourceViewResolver() {
+        InternalResourceViewResolver viewResolver = new InternalResourceViewResolver();
+        viewResolver.setViewClass(InternalResourceView.class);
+        return viewResolver;
+    }
+}

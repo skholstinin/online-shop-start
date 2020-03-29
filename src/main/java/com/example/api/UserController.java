@@ -1,10 +1,10 @@
 package com.example.api;
 
 import com.example.entity.User;
-import com.example.security.JWT.JwtProvider;
-import com.example.service.UserService;
 import com.example.napages.request.LoginForm;
 import com.example.napages.response.JwtResponse;
+import com.example.security.JWT.JwtProvider;
+import com.example.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,7 +17,6 @@ import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.web.bind.annotation.*;
-
 
 import java.security.Principal;
 
@@ -34,6 +33,17 @@ public class UserController {
 
     @Autowired
     AuthenticationManager authenticationManager;
+
+
+    @GetMapping(value = "/error")
+    public String forwardTo() {
+        return "forward:/index.html";
+    }
+
+    @PostMapping(value = "/**/{path:[^\\.]*}")
+    public String forward() {
+        return "forward:/index.html";
+    }
 
     @PostMapping("/login")
     public ResponseEntity<JwtResponse> login(@RequestBody LoginForm loginForm) {
