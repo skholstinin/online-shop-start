@@ -35,11 +35,11 @@ public class UserController {
     AuthenticationManager authenticationManager;
 
 
-    @RequestMapping(value = "/**/{[path:[^\\.]*}")
-    public String redirect() {
-        // Forward to home page so that route is preserved.
-        return "forward:/index.html";
-    }
+//    @RequestMapping(value = "/**/{[path:[^\\.]*}")
+//    public String redirect() {
+//        // Forward to home page so that route is preserved.
+//        return "forward:/index.html";
+//    }
 
 //    @GetMapping(value = "/error")
 //    public String forwardTo() {
