@@ -12,3 +12,5 @@ src/main/frontend/node/
 src/main/resources/
 .mvn/
 src/main/frontend/
+/out/
+/.mvn/
