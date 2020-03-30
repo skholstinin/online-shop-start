@@ -14,33 +14,15 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 @EnableWebMvc
 @ComponentScan(basePackages = {"com.example.api"})
 public class WebMvcConfig implements WebMvcConfigurer {
-//    @Value("#{'${web.mvc.crossOrigins}'.split(',')}")
-//    private String[] crossOrigins;
 
-    private static final String[] CLASSPATH_RESOURCE_LOCATIONS = {
-            "classpath:/META-INF/resources/",
-            "classpath:/resources/",
-            "classpath:/static/",
-            "classpath:/public/",
-            "classpath:/static/asterisk-prime-ui/"
-    };
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         if (!registry.hasMappingForPattern("/**")) {
             registry.addResourceHandler("/**")
-                    .addResourceLocations(CLASSPATH_RESOURCE_LOCATIONS);
+                    .addResourceLocations("classpath:/static/");
         }
     }
-
-//    @Override
-//    public void addCorsMappings(CorsRegistry registry)
-//    {
-//        registry.addMapping("/api/**")
-//                .allowedOrigins(crossOrigins)
-//                .allowCredentials(true)
-//                .maxAge(3600);
-//    }
 
     @Override
     public void addViewControllers(ViewControllerRegistry registry) {

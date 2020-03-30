@@ -20,6 +20,9 @@ export class ErrorInterceptor implements HttpInterceptor {
         this.userService.logout();
         this.router.navigate(['/login']);
       }
+      if (err.status === 400) {
+        this.router.navigate(['/index'])
+      }
 
       const error = err.error || err.statusText;
       return throwError(error);

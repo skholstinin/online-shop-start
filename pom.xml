@@ -6,6 +6,7 @@
   <groupId>com.example</groupId>
   <artifactId>online-shop-start</artifactId>
   <version>1.0</version>
+  <packaging>jar</packaging>
 
   <parent>
     <groupId>org.springframework.boot</groupId>
@@ -107,6 +108,49 @@
 
   <build>
     <plugins>
+      <!--      <plugin>-->
+      <!--        <groupId>com.github.eirslett</groupId>-->
+      <!--        <artifactId>frontend-maven-plugin</artifactId>-->
+      <!--        &lt;!&ndash;            <version>3</version>&ndash;&gt;-->
+
+      <!--        <configuration>-->
+      <!--          <workingDirectory>src/main/frontend</workingDirectory>-->
+      <!--        </configuration>-->
+
+      <!--        <executions>-->
+
+      <!--          <execution>-->
+      <!--            <id>install-node-and-npm</id>-->
+      <!--            <goals>-->
+      <!--              <goal>install-node-and-npm</goal>-->
+      <!--            </goals>-->
+      <!--            <configuration>-->
+      <!--              <nodeVersion>v12.6.0</nodeVersion>-->
+      <!--            </configuration>-->
+      <!--          </execution>-->
+
+      <!--          <execution>-->
+      <!--            <id>npm install</id>-->
+      <!--            <goals>-->
+      <!--              <goal>npm</goal>-->
+      <!--            </goals>-->
+      <!--            <configuration>-->
+      <!--              <arguments>install</arguments>-->
+      <!--            </configuration>-->
+      <!--          </execution>-->
+      <!--          <execution>-->
+      <!--            <id>npm build</id>-->
+      <!--            <goals>-->
+      <!--              <goal>npm</goal>-->
+      <!--            </goals>-->
+      <!--            <configuration>-->
+      <!--              <arguments>run build</arguments>-->
+      <!--            </configuration>-->
+      <!--            <phase>generate-resources</phase>-->
+      <!--          </execution>-->
+      <!--        </executions>-->
+      <!--      </plugin>-->
+
       <plugin>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-maven-plugin</artifactId>

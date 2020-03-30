@@ -35,15 +35,15 @@ public class UserController {
     AuthenticationManager authenticationManager;
 
 
-    @GetMapping(value = "/error")
-    public String forwardTo() {
-        return "forward:/index.html";
-    }
-
-    @PostMapping(value = "/**/{path:[^\\.]*}")
-    public String forward() {
-        return "forward:/index.html";
-    }
+//    @GetMapping(value = "/error")
+//    public String forwardTo() {
+//        return "forward:/index.html";
+//    }
+//
+//    @GetMapping(value = "/**/{path:[^\\.]*}")
+//    public String forward() {
+//        return "forward:/index.html";
+//    }
 
     @PostMapping("/login")
     public ResponseEntity<JwtResponse> login(@RequestBody LoginForm loginForm) {
