@@ -9,7 +9,6 @@ src/main/frontend/dist/
 src/main/frontend/.idea/
 src/main/frontend/node_modules/
 src/main/frontend/node/
-src/main/resources/
 .mvn/
 src/main/frontend/
 /out/
