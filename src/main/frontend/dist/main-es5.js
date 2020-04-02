@@ -530,9 +530,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
       factory: function AppRoutingModule_Factory(t) {
         return new (t || AppRoutingModule)();
       },
-      imports: [[[_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forRoot(routes, {
-        useHash: true
-      })] // RouterModule.forRoot(routes)//{onSameUrlNavigation: 'reload'}
+      imports: [[// [RouterModule.forRoot(routes, {useHash: true})]
+      _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forRoot(routes) //{onSameUrlNavigation: 'reload'}
       ], _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
     });
 
@@ -550,9 +549,8 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
         type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"],
         args: [{
           declarations: [],
-          imports: [[_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forRoot(routes, {
-            useHash: true
-          })] // RouterModule.forRoot(routes)//{onSameUrlNavigation: 'reload'}
+          imports: [// [RouterModule.forRoot(routes, {useHash: true})]
+          _angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"].forRoot(routes) //{onSameUrlNavigation: 'reload'}
           ],
           exports: [_angular_router__WEBPACK_IMPORTED_MODULE_1__["RouterModule"]]
         }]
