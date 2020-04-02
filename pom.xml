@@ -108,7 +108,6 @@
     </dependencies>
 
     <build>
-        <finalName>online-shop-start</finalName>
         <plugins>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
@@ -122,10 +121,10 @@
                         <configuration>
                             <artifactItems>
                                 <artifactItem>
-                                    <groupId>com.github.jsimone</groupId>
+                                    <groupId>com.heroku</groupId>
                                     <artifactId>webapp-runner</artifactId>
                                     <version>9.0.30.0</version>
-                                    <destFileName>webapp-runner.war</destFileName>
+                                    <destFileName>webapp-runner.jar</destFileName>
                                 </artifactItem>
                             </artifactItems>
                         </configuration>
