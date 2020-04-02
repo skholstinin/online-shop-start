@@ -12,7 +12,7 @@ import org.springframework.web.servlet.resource.PathResourceResolver;
 
 @Configuration
 @EnableWebMvc
-@ServletComponentScan("com.example")
+@ServletComponentScan("com.example.api")
 public class WebMvcConfig implements WebMvcConfigurer {
 
 //    @Value("${spring.resources.static-locations}")
