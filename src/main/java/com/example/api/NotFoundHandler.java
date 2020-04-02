@@ -18,19 +18,19 @@ import java.nio.charset.Charset;
 @ControllerAdvice
 public class NotFoundHandler {
 
-    @Value("${spa.default-file}")
-    String defaultFile;
-
-    @ExceptionHandler(NoHandlerFoundException.class)
-    public ResponseEntity<String> renderDefaultPage() {
-        try {
-            File indexFile = ResourceUtils.getFile("classpath:/static/index.html");
-            FileInputStream inputStream = new FileInputStream(indexFile);
-            String body = StreamUtils.copyToString(inputStream, Charset.defaultCharset());
-            return ResponseEntity.ok().contentType(MediaType.TEXT_HTML).body(body);
-        } catch (IOException e) {
-            e.printStackTrace();
-            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("There was an error completing the action.");
-        }
-    }
+//    @Value("${spa.default-file}")
+//    String defaultFile;
+//
+//    @ExceptionHandler(NoHandlerFoundException.class)
+//    public ResponseEntity<String> renderDefaultPage() {
+//        try {
+//            File indexFile = ResourceUtils.getFile("classpath:/static/index.html");
+//            FileInputStream inputStream = new FileInputStream(indexFile);
+//            String body = StreamUtils.copyToString(inputStream, Charset.defaultCharset());
+//            return ResponseEntity.ok().contentType(MediaType.TEXT_HTML).body(body);
+//        } catch (IOException e) {
+//            e.printStackTrace();
+//            return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("There was an error completing the action.");
+//        }
+//    }
 }
