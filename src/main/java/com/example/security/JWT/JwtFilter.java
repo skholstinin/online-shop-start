@@ -19,6 +19,7 @@ import java.util.ArrayList;
 
 @Component
 public class JwtFilter extends OncePerRequestFilter {
+
     @Autowired
     private JwtProvider jwtProvider;
     @Autowired

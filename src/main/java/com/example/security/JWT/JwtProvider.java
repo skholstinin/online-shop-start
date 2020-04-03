@@ -16,9 +16,12 @@ import java.util.Date;
 public class JwtProvider {
 
     private static final Logger logger = LoggerFactory.getLogger(JwtProvider.class);
-    @Value("${jwtSecret}")
+
+    //    @Value("${jwtSecret}")
+    @Value("secret")
     private String jwtSecret;
-    @Value("${jwtExpiration}")
+    //    @Value("${jwtExpiration}")
+    @Value("86400")
     private int jwtExpiration;
 
     public String generate(Authentication authentication) {
